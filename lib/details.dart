@@ -5,8 +5,8 @@ import 'package:belajar_restapi/main.dart';
 import 'package:http/http.dart' as http;
 
 class Details extends StatefulWidget {
-  List list;
-  int index;
+  final List list; // Tambahkan kata kunci 'final' di sini
+  final int index; // Tambahkan kata kunci 'final' di sini
   Details({required this.list, required this.index});
   @override
   _DetailsState createState() => _DetailsState();
