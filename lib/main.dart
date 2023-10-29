@@ -41,10 +41,13 @@ class _HomeState extends State<Home> {
         title: const Center(
           child: Text("PHP MySQL CRUD | Ega Permana"),
         ),
-        shape: const BeveledRectangleBorder(
-            borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(20),
-                bottomRight: Radius.circular(20))),
+        shape: const ContinuousRectangleBorder(
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(50),
+            bottomRight: Radius.circular(50),
+          ),
+        ),
+        automaticallyImplyLeading: false, // Hapus ikon "arrow left"
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => Navigator.of(context).push(

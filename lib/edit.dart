@@ -37,13 +37,21 @@ class _EditState extends State<Edit> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child: Text("Edit Data ${widget.list[widget.index]['title']}"),
+        shape: const ContinuousRectangleBorder(
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(50),
+            bottomRight: Radius.circular(50),
+          ),
         ),
-        shape: const BeveledRectangleBorder(
-            borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(20),
-                bottomRight: Radius.circular(20))),
+        flexibleSpace: Center(
+          child: Text(
+            '${widget.list[widget.index]['title']}',
+            style: TextStyle(
+              fontSize: 20.0,
+              color: Colors.white,
+            ),
+          ),
+        ),
       ),
       body: ListView(
         children: [
@@ -52,14 +60,15 @@ class _EditState extends State<Edit> {
             child: TextFormField(
               controller: title,
               autofocus: true,
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
+              decoration: InputDecoration(
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30), // Mebulatkan sudut
+                ),
                 labelText: 'Enter Title',
                 hintText: 'Enter Title',
-                prefixIcon: IconButton(
-                  onPressed: null,
-                  icon: Icon(Icons.title),
-                ),
+                prefixIcon: Icon(Icons.title),
+                filled: true, // Mengisi bidang dengan warna latar belakang
+                fillColor: Colors.white, // Warna latar belakang putih
               ),
             ),
           ),
@@ -69,22 +78,32 @@ class _EditState extends State<Edit> {
               maxLines: 5,
               controller: content,
               autofocus: true,
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
+              decoration: InputDecoration(
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30),
+                ),
                 labelText: 'Enter Content',
                 hintText: 'Enter Content',
-                prefixIcon: IconButton(
-                  onPressed: null,
-                  icon: Icon(Icons.text_snippet_outlined),
-                ),
+                prefixIcon: Icon(Icons.text_snippet_outlined),
+                filled: true,
+                fillColor: Colors.white,
               ),
             ),
           ),
           Container(
-            padding: const EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Colors.teal,
+              borderRadius:
+                  BorderRadius.circular(30), // Membuat tombol berbentuk bulat
+            ),
             child: MaterialButton(
-              child: const Text("Edit Data"),
-              color: Colors.amber,
+              padding: const EdgeInsets.symmetric(
+                  horizontal: 20, vertical: 20), // Atur ukuran tombol
+              child: const Text(
+                "Edit Data",
+                style: TextStyle(color: Colors.white), // Warna teks putih
+              ),
               onPressed: () {
                 editData();
                 Navigator.of(context).push(
