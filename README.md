@@ -1,4 +1,5 @@
 # Ega Permana (20210120068)
+# TI SE 1/5
 
 <div align="center">
   <h1>Hasil Screenshoot</h1>
