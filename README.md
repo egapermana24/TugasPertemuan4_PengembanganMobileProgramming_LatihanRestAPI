@@ -1,16 +1,7 @@
-# belajar_restapi
+# Ega Permana (20210120068)
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<h1>Hasil Screenshoot</h1>
+<img src="folder_screenshoot/home.png" alt="Halaman Home" height="700">
+<img src="folder_screenshoot/details.png" alt="Halaman Details" height="700">
+<img src="folder_screenshoot/add.png" alt="Halaman Add" height="700">
+<img src="folder_screenshoot/edit.png" alt="Halaman Edit" height="700">
