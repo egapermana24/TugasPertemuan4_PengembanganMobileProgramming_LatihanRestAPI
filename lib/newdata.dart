@@ -25,13 +25,21 @@ class _NewDataState extends State<NewData> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(
-          child: Text("Add New Blog"),
+        shape: const ContinuousRectangleBorder(
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(50),
+            bottomRight: Radius.circular(50),
+          ),
         ),
-        shape: const BeveledRectangleBorder(
-            borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(20),
-                bottomRight: Radius.circular(20))),
+        flexibleSpace: Center(
+          child: Text(
+            'Add New Blog',
+            style: TextStyle(
+              fontSize: 20.0,
+              color: Colors.white,
+            ),
+          ),
+        ),
       ),
       body: ListView(
         children: [
@@ -40,8 +48,10 @@ class _NewDataState extends State<NewData> {
             child: TextFormField(
               controller: title,
               autofocus: true,
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
+              decoration: InputDecoration(
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30),
+                ),
                 labelText: 'Enter Title',
                 hintText: 'Enter Title',
                 prefixIcon: IconButton(
@@ -57,8 +67,10 @@ class _NewDataState extends State<NewData> {
               maxLines: 5,
               controller: content,
               autofocus: true,
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
+              decoration: InputDecoration(
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30),
+                ),
                 labelText: 'Enter Content',
                 hintText: 'Enter Content',
                 prefixIcon: IconButton(
@@ -69,10 +81,19 @@ class _NewDataState extends State<NewData> {
             ),
           ),
           Container(
-            padding: const EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Colors.teal,
+              borderRadius:
+                  BorderRadius.circular(30), // Membuat tombol berbentuk bulat
+            ),
             child: MaterialButton(
-              child: const Text("Add Data"),
-              color: Colors.amber,
+              padding: const EdgeInsets.symmetric(
+                  horizontal: 20, vertical: 20), // Atur ukuran tombol
+              child: const Text(
+                "Add Data",
+                style: TextStyle(color: Colors.white), // Warna teks putih
+              ),
               onPressed: () {
                 addData();
                 Navigator.of(context).push(

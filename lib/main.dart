@@ -105,9 +105,19 @@ class Items extends StatelessWidget {
             ],
           ),
           child: ListTile(
-            title: Text(list[i]['title']),
+            title: Text(
+              list[i]['title'].split(' ').map((String word) {
+                return word[0].toUpperCase() + word.substring(1);
+              }).join(' '),
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             subtitle: Text(list[i]['content']),
             leading: const Icon(Icons.text_snippet_outlined),
+            contentPadding:
+                EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
+            dense: true,
             onTap: () => Navigator.of(context).push(MaterialPageRoute(
               builder: (BuildContext context) => Details(list: list, index: i),
             )),
